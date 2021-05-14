@@ -1,0 +1,248 @@
+*{
+    box-sizing: border-box;
+}
+body *{
+    font-family: 'roboto', sans-serif;
+}
+
+.header{
+    width: 100%;
+    height: 67px;
+    background:#c3cfd9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:34px;
+    color:#e8833a; 
+}
+
+.title{
+    margin: 45px 0px;
+    font-size: 24px;
+    text-align: center;
+    color:#293845;
+}
+
+.movies-container{
+     margin:0px 30px;
+     display:flex;
+     flex-wrap: wrap;
+     row-gap: 15px;
+     column-gap:30px;
+}
+.movie-box{
+     width: 145px;
+     height: 209px;
+     border-radius: 3px;
+     box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.10) ;
+}
+.movie-box img{
+     padding:8px;
+     width: 100%;
+}
+
+.sessions-container{
+     margin-left:24px;
+     padding-left:10%;
+     font-size:20px;
+     color:#293845;
+}
+.session-box{
+    margin-bottom:26px;
+
+}
+.session-box button {
+    margin:26px 14px 0px 8px;
+    background:#e8833a;
+    width:83px;
+    height: 43px;
+    border-radius: 4px;
+    color:#FFF;
+    font-size: 18px;
+    border-style: none;
+    cursor:pointer;
+}
+
+.content{
+    margin:0px 30px;
+}
+
+.center{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.seats-container{
+    width: 526px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    column-gap:21px;
+}
+
+.seat{
+    text-align: center;
+    width: 30px;
+    height:30px;
+    border-radius:15px;
+    border-style: none;
+    background:#C3CFD9;
+    border:1px solid #808F9D;
+    cursor:pointer;
+}
+
+.seat.unavailable{
+    background:#FBE192;
+    border:1px solid #F7C52B;
+}
+
+.seat.selected{
+    background:#8DD7CF;
+    border:1px solid #45BDB0;
+}
+
+.seats-label{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 25px;
+}
+.label{
+     width: 30px;
+     height: 30px;
+     border-radius: 15px;
+     display: flex;
+     margin: 8px 25px 12px 25px;
+     color:#4E5A65;
+     font-size:13px;
+}
+
+.green{
+    background:#8DD7CF;
+    border:1px solid #45BDB0
+}
+.yellow{
+    background:#FBE192;
+    border:1px solid #F7C52B;
+}
+.grey{
+    background:#C3CFD9;
+    border:1px solid #808F9D;
+}
+.info{
+    margin-top:40px;
+}
+.info p{
+    color:#293845;
+    font-size:18px;
+    margin-bottom:5px
+}
+.info input{
+    width:99%;
+    height:51px;
+    margin-bottom: 16px;
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    padding-left:15px;
+    font-size:20px;
+    outline-style: none;
+}
+.info input::-webkit-input-placeholder{
+    font-style: italic;
+    font-size:18px;
+}
+
+.confirm button{
+    margin-top:40px;
+    width: 225px;
+    height:42px;
+    font-size: 18px;
+    color:#FFF;
+    background: #e8833a;
+    border-radius: 4px;
+    border-style: none;
+    cursor:pointer
+}
+
+.bottom{
+    position:fixed;
+    bottom:0;
+    left:0;
+    z-index: 10;
+    height: 117px;
+    display: flex;
+    align-items: center;
+    background: #DFE6ED;
+    border-top: 1px solid #9EADBA;
+    width:100%;
+}
+.movie-box-tiny{
+    margin-left: 12px;
+    width: 64px;
+    height: 89px;
+    border-radius: 3px;
+    box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.10) ;
+}
+.movie-box-tiny img{
+    padding:5px;
+    width:100%;
+}
+.bottom-text{
+    margin-left: 16px;
+    font-size:26px;
+    color:#293845;
+}
+.bottom-text p {
+    margin:5px 0px;
+}
+
+.ticket.title{
+    font-weight: 700;
+    color:#247A6B;
+    margin-top: 30px;
+    margin-bottom:60px
+}
+.ticket-content{
+    margin-left:29px;
+    margin-bottom: 36px;
+}
+.section-title{
+    font-size:24px;
+    color:#293845;
+    font-weight: 700;
+    margin-bottom:13px;
+}
+.data{
+    color:#293845;
+    font-size: 22px;
+    margin-left: 1px;
+    margin-bottom:4px
+}
+
+
+
+
+@media(max-width:555px){
+    .content{
+        margin:0px 12px
+    }
+   .seats-container{
+        width:348px;
+        height:190px;
+        column-gap:5px;
+    }
+}
+
+@media(max-width:370px){
+    .content{
+        margin:0px 8px;
+    }
+   .seats-container{
+       width:348px;
+       height:190px;
+       column-gap:2px;
+   }
+}
