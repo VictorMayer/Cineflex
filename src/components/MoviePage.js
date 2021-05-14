@@ -20,7 +20,7 @@ export default function MoviePage(props){
             setSessions(answer.data.days)
         })
 
-    },[])
+    },[]) // eslint-disable-line react-hooks/exhaustive-deps
     
 
     return(

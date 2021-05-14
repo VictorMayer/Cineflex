@@ -19,7 +19,7 @@ export default function Session(props){
             setMovie(answer.data.seats)
         })
 
-    },[])
+    },[]);   // eslint-disable-line react-hooks/exhaustive-deps
 
     function toggleSelected(selectedSeat,i){
         if (!selectedSeat.isAvailable){
