@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect } from "react";
-import {Link, useParams} from 'react-router-dom'
+import {useParams, useHistory} from 'react-router-dom'
 import React from 'react'
 import Bottom from './Bottom'
 
@@ -9,6 +9,7 @@ export default function Session(props){
     const {showtimeId} = useParams()
     const {selected, setSelected, userName, setUserName, cpf, setCpf, selectedSeats, setSelectedSeats} = props
     const [movie,setMovie] = React.useState([])
+    const history = useHistory(); 
 
     useEffect(()=>{
         const promisse=axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/showtimes/${showtimeId}/seats`)
@@ -40,11 +41,17 @@ export default function Session(props){
     }
 
     function confirmTickets(){
+        if(selectedSeats.lenght === 0 || userName === "" || cpf === ""){
+            alert("Um ou mais campos não foram preenchidos")
+            return;
+        }
         const seatIds = [];
         selectedSeats.forEach((seat)=>{seatIds.push(seat.id)})
         const confirmation = { ids:seatIds, name:userName, cpf:cpf}
-        axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/seats/book-many", confirmation);
-        // promisse.then((answer)=>console.log("comprado!"))
+        const promisse = axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/seats/book-many", confirmation);
+        promisse.then(()=>{
+            history.push("/success");
+        })
     }
     
     return(
@@ -86,9 +93,9 @@ export default function Session(props){
                 </div>
             </div>
             <div className="center confirm">
-                <Link to={`/success`} movie={movie}> 
+                {/* <Link to={`/success`} movie={movie}>  */}
                     <button onClick={confirmTickets}>Resevar assesnto(s)</button>
-                </Link>
+                {/* </Link> */}
             </div>
             <Bottom selected={selected}/>
         </>

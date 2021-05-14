@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import MoviePage from './components/MoviePage'
